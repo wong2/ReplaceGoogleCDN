@@ -1,13 +1,11 @@
 chrome.webRequest.onBeforeRequest.addListener(
     function(request) {
-        var url = request.url.replace('googleapis.com', 'lug.ustc.edu.cn');
-        url = url.replace('themes.googleusercontent.com', 'google-themes.lug.ustc.edu.cn');
+        var url = request.url.replace('cdnjs.cloudflare.com/ajax', 'cdn.css.net');
         return {redirectUrl: url};
     },
     {
         urls: [
-            "*://ajax.googleapis.com/*",
-            "*://themes.googleusercontent.com/*"
+            "*://cdnjs.cloudflare.com/*"
         ]
     },
     ["blocking"]
